@@ -7,12 +7,12 @@ document.querySelector('form').addEventListener('submit', generateName);
 
 function generateName(e) {
   e.preventDefault(); 
-  const color = document.getElementById('color').selectedOptions[0].value;
-  console.log(color); 
-  const age = document.getElementById('age').selectedOptions[0].value;
-  const food = document.getElementById('food').selectedOptions[0].value;
-  const animal = document.getElementById('animal').selectedOptions[0].value;
-  const genre = document.getElementById('music').selectedOptions[0].value;
+  
+  const color = Number(document.getElementById('color').selectedOptions[0].value);
+  const age = Number(document.getElementById('age').selectedOptions[0].value);
+  const food = Number(document.getElementById('food').selectedOptions[0].value);
+  const animal = Number(document.getElementById('animal').selectedOptions[0].value);
+  const genre = Number(document.getElementById('music').selectedOptions[0].value);
   
   const prefix = prefixes[(color + age) % length]; 
   const suffix = suffixes[(food + animal + genre) % length];
